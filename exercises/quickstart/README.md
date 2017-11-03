@@ -1,6 +1,11 @@
 
 ## First Steps
 
+12:14
+23C
+35F
+
+
 * [Install Docker](https://www.docker.com/products/overview#/install_the_platform)
 * [Sign up](https://cloud.docker.com/)
 * `docker login`
