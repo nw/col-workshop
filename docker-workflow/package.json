@@ -1,0 +1,49 @@
+{
+  "name": "example",
+  "version": "0.0.1",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nw/example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nw/example/issues"
+  },
+  "homepage": "https://github.com/nw/example",
+  "keywords": [],
+  "author": "Nathan White <nw@nwhite.net> (http://nwhite.net)",
+  "license": "MIT",
+  "scripts": {
+    "build": "docker build -t example:local .",
+    "start": "nodemon server/app.js",
+    "test": "tape test/**/*.js | tap-spec",
+    "coverage": "istanbul cover --dir ./reports/coverage -- tape test/**/*.js | tap-spec",
+    "lint": "eslint **/*.js; exit 0",
+    "lint-html": "eslint **/*.js -f html -o ./reports/lint-results.html; exit 0",
+    "lint-fix": "eslint --fix **/*.js",
+    "plato": "plato -r -d ./reports/complexity -e .eslintrc -x 'node_modules|test' **/*.js",
+    "reports": "npm run lint-html; npm run coverage; npm run plato",
+    "webpack": "webpack"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "compression": "~1.6.2",
+    "cookie-parser": "~1.4.3",
+    "errorhandler": "~1.4.3",
+    "express": "~4.14.0",
+    "method-override": "~2.3.6",
+    "moment": "2.15.0",
+    "response-time": "~2.3.1",
+    "serve-static": "~1.11.1"
+  },
+  "devDependencies": {
+    "eslint": "~3.3.1",
+    "istanbul": "~0.4.4",
+    "nodemon": "~1.10.2",
+    "plato": "~1.7.0",
+    "standard": "~8.0.0",
+    "supertest": "~2.0.0",
+    "tap-spec": "~4.1.1",
+    "tape": "~4.6.0"
+  }
+}

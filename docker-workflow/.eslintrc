@@ -1,0 +1,12 @@
+{
+  "extends": "standard",
+  
+  "rules": {
+    "padded-blocks": "off",
+    "comma-style": ["error", "last", {"exceptions": {"VariableDeclaration": true }}],
+    "one-var": ["error", {"let": "always"}],
+    "camelcase": 0,
+    "semi": 1
+  }
+
+}
